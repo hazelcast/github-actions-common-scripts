@@ -1,0 +1,21 @@
+name: PR Builder
+
+on:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          source /dev/stdin <<< "$(curl --silent https://raw.githubusercontent.com/{$GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}/logging.functions.sh)"
+
+          echo "Just a regular echo message"
+
+          echoerr "Printing with echoerr"
+          echowarning "Printing with echowarning"
+          echonotice "Printing with echonotice"
+          echodebug "Printing with echodebug"
+
+          echo_group "Printing with echo_group"
+          echo "echo_group contents"
+          echo_group_end
