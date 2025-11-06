@@ -27,6 +27,7 @@ jobs:
           assert_equals "echodebug" "::debug::a b c" "$(echodebug "a b c" 2>&1)"
           assert_equals "echo_group" "::group::a b c" "$(echo_group "a b c" 2>&1)"
           assert_equals "echo_group_end" "::endgroup::" "$(echo_group_end "a b c" 2>&1)"
+          assert_equals "echoerr multiline" "::error::ERROR - line1%0Aline2%0Aline3" "$(echoerr "line1"$'\n'"line2"$'\n'"line3" 2>&1)"          
 
           assert_eq 0 "${TESTS_RESULT}" "All tests should pass"    
 
