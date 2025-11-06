@@ -1,11 +1,11 @@
-# GitHub Actions workflow commands for bash
+# GitHub Actions common scripts
+
+## [`logging.functions.sh`](logging.functions.sh)
 
 GitHub Actions support [workflow commands](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands) defined as:
 > Actions can communicate with the runner machine to set environment variables, output values used by other actions, add debug messages to the output logs, and other tasks.
 
 This repo contains bash wrapper script(s) to easily interface with those functions.
-
-## [`logging.functions.sh`](logging.functions.sh)
 
 [GitHub allows more fine-grained output than just `echo`](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#setting-an-error-message) - but the syntax is arcane. This wraps access into a simple function call.
 
