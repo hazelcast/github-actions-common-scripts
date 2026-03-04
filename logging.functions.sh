@@ -1,6 +1,6 @@
 # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions
 
-# Prints the given message to stderr
+# Prints the given message as an error
 function echoerr() {
   # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-error-message
   __log "error" "ERROR -" "${*}"
