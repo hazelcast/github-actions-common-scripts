@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Assert output
         run: |
-          source /dev/stdin <<< "$(curl --fail --silent https://raw.githubusercontent.com/{$GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}/logging.functions.sh)"
-          source /dev/stdin <<< "$(curl --fail --silent https://raw.githubusercontent.com/hazelcast/assert.sh/main/assert.sh)"
+          source /dev/stdin <<< "$(curl --fail --retry 5 --retry-all-errors --show-error --silent https://raw.githubusercontent.com/{$GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}/logging.functions.sh)"
+          source /dev/stdin <<< "$(curl --fail --retry 5 --retry-all-errors --show-error --silent https://raw.githubusercontent.com/hazelcast/assert.sh/main/assert.sh)"
 
           TESTS_RESULT=0
 
@@ -33,7 +33,7 @@ jobs:
 
       - name: Demo output
         run: |
-          source /dev/stdin <<< "$(curl --fail --silent https://raw.githubusercontent.com/{$GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}/logging.functions.sh)"
+          source /dev/stdin <<< "$(curl --fail --retry 5 --retry-all-errors --show-error --silent https://raw.githubusercontent.com/{$GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}/logging.functions.sh)"
 
           echo "Just a regular echo message"
 
