@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          source /dev/stdin <<< "$(curl --fail --silent https://raw.githubusercontent.com/hazelcast/github-actions-workflow-commands-for-bash/main/logging.functions.sh)"
+          source /dev/stdin <<< "$(curl --fail --retry 5 --retry-all-errors --show-error --silent https://raw.githubusercontent.com/hazelcast/github-actions-workflow-commands-for-bash/main/logging.functions.sh)"
 
           echo "Just a regular echo message"
           echodebug "Checking credentials registered with flux capacitor..."
